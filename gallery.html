@@ -25,7 +25,7 @@
         nav ul li:hover ul.dropdown-menu { display: flex; }
         nav ul.dropdown-menu li a { padding: 12px 18px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        .subheader { background: linear-gradient(90deg, #240d47, #3d1b73); color: white; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .subheader { background: linear-gradient(90deg, #240d47, #3d1b73); color: white; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 10px; }
         .subheader h2 { font-size: 18px; font-weight: 600; }
         
         .admin-toggle-btn { background: #333; color: #ff4d4d; border: 1px solid #ff4d4d; padding: 6px 14px; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 12px; transition: 0.3s; }
@@ -34,7 +34,7 @@
         .main-container { padding: 40px 50px; max-width: 1350px; margin: 0 auto; flex: 1; width: 100%; display: flex; flex-direction: column; gap: 30px; }
         
         #galleryAdminBox { display: none; background: linear-gradient(145deg, #180b2e, #130724); padding: 25px; border-radius: 12px; border: 2px solid #ff4d4d; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-        .form-ctrl { width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,77,77,0.4); color: white; font-size: 13px; }
+        .form-ctrl { width: 100%; max-width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,77,77,0.4); color: white; font-size: 13px; }
 
         .gallery-box { background: linear-gradient(145deg, #180b2e, #130724); padding: 40px; border-radius: 12px; border-top: 4px solid #ff4d4d; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
         .gallery-box h2 { color: #fff; font-size: 26px; border-bottom: 2px solid #ff4d4d; padding-bottom: 10px; margin-bottom: 30px; text-align: center; }
@@ -49,15 +49,15 @@
         .delete-photo-btn:hover { background: #ff0000; }
 
         /* Lightbox Fullscreen Modal Styles */
-        #lightboxModal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(8px); align-items: center; justify-content: center; flex-direction: column; }
+        #lightboxModal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(8px); align-items: center; justify-content: center; flex-direction: column; padding: 20px; }
         #lightboxModal img { max-width: 85%; max-height: 75vh; border-radius: 8px; border: 2px solid #ff4d4d; box-shadow: 0 0 30px rgba(255,77,77,0.4); }
-        #lightboxCaption { color: #fff; margin-top: 15px; font-size: 18px; font-weight: bold; letter-spacing: 1px; }
+        #lightboxCaption { color: #fff; margin-top: 15px; font-size: 18px; font-weight: bold; letter-spacing: 1px; text-align: center; }
         .lightbox-close { position: absolute; top: 25px; right: 35px; color: #fff; font-size: 35px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .lightbox-close:hover { color: #ff4d4d; }
         .lightbox-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255, 77, 77, 0.8); color: white; border: none; padding: 15px 20px; font-size: 22px; cursor: pointer; border-radius: 5px; font-weight: bold; transition: 0.3s; }
         .lightbox-btn:hover { background: #ff4d4d; }
-        #lightboxPrev { left: 30px; }
-        #lightboxNext { right: 30px; }
+        #lightboxPrev { left: 15px; }
+        #lightboxNext { right: 15px; }
 
         footer { background: #080211; color: white; margin-top: auto; border-top: 4px solid #ff4d4d; }
         .footer-top { background: linear-gradient(135deg, #cc0000, #ff4d4d); display: flex; justify-content: space-around; padding: 30px 40px; color: white; flex-wrap: wrap; gap: 20px; }
@@ -80,11 +80,31 @@
         .wa-btn { background: #25d366; color: #000; }
         .social-btn:hover { opacity: 0.85; transform: translateY(-2px); }
 
-        .footer-quote-box input { width: 100%; padding: 11px; margin-bottom: 12px; border: none; border-radius: 6px; font-size: 13px; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255, 77, 77, 0.2); }
+        .footer-quote-box input { width: 100%; max-width: 100%; padding: 11px; margin-bottom: 12px; border: none; border-radius: 6px; font-size: 13px; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255, 77, 77, 0.2); }
         .footer-quote-box button { background: #ff4d4d; color: white; border: none; padding: 11px 20px; font-weight: bold; cursor: pointer; border-radius: 6px; }
         
         .footer-bottom { background: #05010a; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; font-size: 13px; color: #64748b; flex-wrap: wrap; gap: 10px; }
         .footer-bottom span { color: #ff4d4d; }
+
+        /* Mobile Responsive Media Queries (Added to fix mobile view without hiding navigations) */
+        @media (max-width: 992px) {
+            header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px 15px; }
+            nav ul.dropdown-menu { position: static; width: 100%; box-shadow: none; border: none; background: rgba(0,0,0,0.3); margin-top: 5px; }
+            .subheader { padding: 15px 20px; flex-direction: column; gap: 10px; text-align: center; }
+            .main-container { padding: 20px; }
+            .gallery-box { padding: 20px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .footer-middle { padding: 30px 20px; }
+            .footer-bottom { padding: 20px; text-align: center; justify-content: center; }
+        }
+
+        @media (max-width: 576px) {
+            .logo-area h1 { font-size: 16px; }
+            .logo-area span { font-size: 9px; }
+            nav ul li a { font-size: 12px; }
+            .bismillah { font-size: 12px; letter-spacing: 1px; }
+        }
     </style>
 </head>
 <body>
@@ -137,7 +157,7 @@
 
     <div class="main-container">
         <div id="galleryAdminBox">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid rgba(255,77,77,0.3); padding-bottom: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid rgba(255,77,77,0.3); padding-bottom: 10px; flex-wrap: wrap; gap: 10px;">
                 <h3 style="color: #ff4d4d; font-size: 18px;">Gallery Admin Control Panel</h3>
                 <button onclick="adminLogout()" style="background: #333; color: #fff; border: 1px solid #777; padding: 5px 12px; font-size: 11px; border-radius: 4px; cursor: pointer;">Logout Admin</button>
             </div>
@@ -149,7 +169,7 @@
                 <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px; color: #cbd5e1;">Image Title / Caption:</label>
                 <input type="text" id="compCaption" placeholder="e.g., Heavy Trailer Fleet" class="form-ctrl">
             </div>
-            <button onclick="uploadNewPhoto()" style="background: #ff4d4d; color: white; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 13px;">Upload Photo to Gallery</button>
+            <button onclick="uploadNewPhoto()" style="background: #ff4d4d; color: white; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 13px; width: 100%;">Upload Photo to Gallery</button>
         </div>
 
         <div class="gallery-box">
@@ -232,7 +252,6 @@
             checkGalleryAdminState();
             renderGallery();
             
-            // اگر کوئی وزٹر مینو کے ذریعے کسی دوسرے صفحے پر جائے گا تو سیشن خودکار ختم ہو جائے گا
             let navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -267,7 +286,6 @@
             
             if(!isGalleryAdmin) {
                 let pass = prompt("Enter Gallery Admin Password:");
-                // پاسورڈ: ZULali123
                 if(pass === "ZULali123") {
                     sessionStorage.setItem('galleryAdminLoggedIn', 'true');
                     alert("Admin login successful! Upload and Delete mode unlocked.");
@@ -314,7 +332,6 @@
             });
         }
 
-        // Lightbox Functions for Next/Prev Navigation
         function openLightbox(index) {
             currentLightboxIndex = index;
             updateLightboxContent();
@@ -328,9 +345,9 @@
         function changeLightboxSlide(direction) {
             currentLightboxIndex += direction;
             if(currentLightboxIndex >= galleryImagesArray.length) {
-                currentLightboxIndex = 0; // واپس پہلی تصویر پر آ جائے گا
+                currentLightboxIndex = 0;
             } else if(currentLightboxIndex < 0) {
-                currentLightboxIndex = galleryImagesArray.length - 1; // آخری تصویر پر چلا جائے گا
+                currentLightboxIndex = galleryImagesArray.length - 1;
             }
             updateLightboxContent();
         }
@@ -342,7 +359,6 @@
             }
         }
 
-        // تصویر کمپریس اور اپ لوڈ کرنے کا فنکشن
         function uploadNewPhoto() {
             let fileInput = document.getElementById('compFile');
             let captionInput = document.getElementById('compCaption').value.trim();
