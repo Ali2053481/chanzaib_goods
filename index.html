@@ -95,10 +95,12 @@
         .footer-bottom { background: #05010a; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; font-size: 13px; color: #64748b; flex-wrap: wrap; gap: 10px; }
         .footer-bottom span { color: #ff4d4d; }
 
-        /* Mobile Responsive Media Queries Added Below */
+        /* Safe Mobile Responsive Fixes (Without changing your original content) */
         @media (max-width: 992px) {
             header { padding: 15px 20px; flex-direction: column; gap: 15px; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 10px 15px; }
+            nav ul.dropdown-menu { position: static; width: 100%; box-shadow: none; border: none; background: rgba(0,0,0,0.2); margin-top: 5px; }
+            nav ul li:hover ul.dropdown-menu { display: flex; }
             .subheader { padding: 15px 20px; flex-direction: column; gap: 5px; text-align: center; }
             .main-container { padding: 20px; flex-direction: column; }
             .sidebar-box { width: 100%; }
