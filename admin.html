@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Chanzaib Goods Transport Company (Regd)</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background: #0f051d; color: #e2e8f0; display: flex; flex-direction: column; min-height: 100vh; }
+        .bismillah { background: linear-gradient(90deg, #111, #1a0b2e, #111); color: #ff4d4d; text-align: center; padding: 10px; font-size: 14px; font-weight: bold; letter-spacing: 2px; border-bottom: 2px solid #ff4d4d; }
+        
+        header { background: linear-gradient(135deg, rgba(30, 12, 58, 0.95), rgba(20, 8, 38, 0.98)); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 18px 50px; border-bottom: 3px solid #ff4d4d; position: sticky; top: 0; z-index: 1000; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-badge { background: linear-gradient(135deg, #ff4d4d, #cc0000); color: white; padding: 8px 16px; font-size: 22px; font-weight: bold; border-radius: 50% / 30%; border: 2px solid #fff; }
+        .logo-area h1 { font-size: 20px; color: #fff; font-weight: 700; }
+        .logo-area span { color: #ff4d4d; display: block; font-size: 11px; font-weight: 600; }
+        
+        nav ul { list-style: none; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; position: relative; }
+        nav ul li { position: relative; }
+        nav ul li a { color: #e2e8f0; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 0; display: block; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: #ff4d4d; }
+
+        nav ul.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: rgba(26, 11, 46, 0.98); flex-direction: column; width: 190px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); z-index: 100; border: 1px solid rgba(255, 77, 77, 0.3); border-radius: 8px; overflow: hidden; backdrop-filter: blur(10px); }
+        nav ul li:hover ul.dropdown-menu { display: flex; }
+        nav ul.dropdown-menu li a { padding: 12px 18px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        .main-container { padding: 40px 50px; max-width: 1200px; margin: 0 auto; flex: 1; width: 100%; display: flex; flex-direction: column; gap: 30px; }
+        
+        #loginCard { background: linear-gradient(145deg, #180b2e, #130724); padding: 40px; border-radius: 12px; border-top: 4px solid #ff4d4d; max-width: 420px; margin: 50px auto; box-shadow: 0 15px 35px rgba(0,0,0,0.6); text-align: center; }
+        #loginCard h2 { color: #fff; margin-bottom: 20px; font-size: 22px; border-bottom: 2px solid #ff4d4d; padding-bottom: 8px; }
+        .login-input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,77,77,0.3); color: white; font-size: 14px; }
+        .login-btn { width: 100%; padding: 12px; background: #ff4d4d; color: white; border: none; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 15px; transition: 0.3s; }
+        .login-btn:hover { background: #cc0000; }
+        .forgot-link { display: block; margin-top: 12px; font-size: 12px; color: #94a3b8; text-decoration: none; cursor: pointer; }
+        .forgot-link:hover { color: #ff4d4d; }
+
+        #adminDashboard { display: none; flex-direction: column; gap: 30px; }
+        .admin-box { background: linear-gradient(145deg, #180b2e, #130724); padding: 30px; border-radius: 12px; border-top: 4px solid #ff4d4d; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+        .admin-box h2 { color: #fff; font-size: 22px; border-bottom: 2px solid #ff4d4d; padding-bottom: 10px; margin-bottom: 20px; }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; color: #cbd5e1; }
+        .form-group input { width: 100%; padding: 11px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,77,77,0.3); color: white; font-size: 14px; }
+        .admin-btn { background: #ff4d4d; color: white; border: none; padding: 12px 20px; font-weight: bold; cursor: pointer; border-radius: 6px; font-size: 14px; transition: 0.3s; }
+        .admin-btn:hover { background: #cc0000; }
+        .danger-btn { background: #800000; color: white; border: none; padding: 12px 20px; font-weight: bold; cursor: pointer; border-radius: 6px; font-size: 14px; transition: 0.3s; }
+        .danger-btn:hover { background: #ff0000; }
+
+        footer { background: #080211; color: white; margin-top: auto; border-top: 4px solid #ff4d4d; padding: 20px 50px; text-align: center; font-size: 13px; color: #64748b; }
+        footer span { color: #ff4d4d; }
+    </style>
+</head>
+<body>
+
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">CZ</div>
+            <div>
+                <h1>CHANZAIB</h1>
+                <span>ADMIN MANAGEMENT PANEL</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="our-story.html">OUR STORY</a></li>
+                <li>
+                    <a href="#">SERVICES ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="truck.html">Truck</a></li>
+                        <li><a href="trailer.html">Trailer</a></li>
+                        <li><a href="mazda.html">Mazda</a></li>
+                    </ul>
+                </li>
+                <li><a href="house-shifting.html">HOUSE SHIFTING</a></li>
+                <li><a href="clients.html">OUR CLIENTS</a></li>
+                <li><a href="membership.html">MEMBERSHIP</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="admin.html" class="active" style="color: #ff4d4d;">ADMIN PANEL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <!-- Login Card -->
+        <div id="loginCard">
+            <h2>Admin Login</h2>
+            <form onsubmit="event.preventDefault(); checkLogin();">
+                <input type="text" id="adminUser" class="login-input" placeholder="Admin Username" required>
+                <input type="password" id="adminPass" class="login-input" placeholder="Password (ZULali123)" required>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <a class="forgot-link" onclick="forgotPassword()">Forgot Password?</a>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="adminDashboard">
+            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 15px 25px; border-radius: 8px; border: 1px solid rgba(255,77,77,0.3);">
+                <h3 style="color: #fff;">Welcome Admin — Full Control Center</h3>
+                <button class="admin-btn" style="background:#333;" onclick="logout()">Logout</button>
+            </div>
+
+            <!-- Danger Zone: Whole Website Delete/Reset -->
+            <div class="admin-box" style="border-top-color: #ff0000;">
+                <h2 style="color: #ff4d4d;">Danger Zone: Website Delete & Reset</h2>
+                <p style="color: #94a3b8; font-size: 13px; margin-bottom: 15px;">Clicking this button will completely delete and reset all website contents, custom text, and settings.</p>
+                <button class="danger-btn" onclick="resetWholeWebsite()">Delete / Reset Whole Website Data</button>
+            </div>
+
+            <!-- Website Content Editing -->
+            <div class="admin-box">
+                <h2>Website Settings & Content Editor</h2>
+                <p style="color: #94a3b8; font-size: 13px; margin-bottom: 15px;">Update website title, main headings, and contact numbers instantly.</p>
+                <div class="form-group">
+                    <label>Company Main Title:</label>
+                    <input type="text" id="editSiteTitle" value="Chanzaib Goods Transport Company (Regd)">
+                </div>
+                <div class="form-group">
+                    <label>Head Office Contact Number:</label>
+                    <input type="text" id="editPhone" value="0323-2053481">
+                </div>
+                <button class="admin-btn" onclick="saveSettings()">Save Website Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Chanzaib Goods Transport Company (Regd). <span>Admin Panel</span></p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            // sessionStorage استعمال کیا گیا ہے تاکہ جیسے ہی کسی دوسرے پیج پر جائیں یا ٹیب بند ہو، سیشن ختم ہو جائے
+            if(sessionStorage.getItem('chanzaibAdminLoggedIn') === 'true') {
+                document.getElementById('loginCard').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'flex';
+            } else {
+                document.getElementById('loginCard').style.display = 'block';
+                document.getElementById('adminDashboard').style.display = 'none';
+            }
+
+            // مینو کے تمام لنکس پر نظر رکھی گئی ہے؛ جیسے ہی کوئی دوسرے پیج پر جائے گا، لاگ آؤٹ ہو جائے گا
+            let navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    let href = this.getAttribute('href');
+                    if(href && href !== 'admin.html' && href !== '#') {
+                        sessionStorage.removeItem('chanzaibAdminLoggedIn');
+                    }
+                });
+            });
+        }
+
+        function checkLogin() {
+            let u = document.getElementById('adminUser').value.trim();
+            let p = document.getElementById('adminPass').value; 
+            
+            // حتمی پاسورڈ: ZULali123 (ZUL بڑے، ali چھوٹے، 123)
+            if(u === "admin" && p === "ZULali123") {
+                sessionStorage.setItem('chanzaibAdminLoggedIn', 'true');
+                document.getElementById('loginCard').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'flex';
+            } else {
+                alert("Invalid Username or Password! Access Denied.");
+                document.getElementById('adminPass').value = "";
+            }
+        }
+
+        function forgotPassword() {
+            let userEmail = "chanzeb_goods@yahoo.com";
+            alert("Password recovery instructions and OTP have been sent to your official email: " + userEmail);
+            window.location.href = "mailto:" + userEmail + "?subject=Admin%20Password%20Recovery%20Request&body=Please%20reset%20my%20admin%20panel%20password.";
+        }
+
+        function logout() {
+            sessionStorage.removeItem('chanzaibAdminLoggedIn');
+            location.reload();
+        }
+
+        function resetWholeWebsite() {
+            if(confirm("Are you sure you want to completely reset/delete all website data?")) {
+                localStorage.clear();
+                alert("Whole website data has been successfully reset/deleted!");
+                location.reload();
+            }
+        }
+
+        function saveSettings() {
+            let title = document.getElementById('editSiteTitle').value;
+            let phone = document.getElementById('editPhone').value;
+            localStorage.setItem('siteMainTitle', title);
+            localStorage.setItem('siteContactPhone', phone);
+            alert("Website settings saved successfully!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Membership - Chanzaib Goods Transport Company (Regd)</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Chanzaib Goods Transport Company (Regd) is an official certified member of Karachi Goods Carriers Association (Membership No. 99) since 2000.">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background: #0f051d; color: #e2e8f0; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+        .bismillah { background: linear-gradient(90deg, #111, #1a0b2e, #111); color: #ff4d4d; text-align: center; padding: 10px; font-size: 14px; font-weight: bold; letter-spacing: 2px; border-bottom: 2px solid #ff4d4d; box-shadow: 0 4px 15px rgba(255, 77, 77, 0.2); }
+        
+        header { background: linear-gradient(135deg, rgba(30, 12, 58, 0.95), rgba(20, 8, 38, 0.98)); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 18px 50px; border-bottom: 3px solid #ff4d4d; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-badge { background: linear-gradient(135deg, #ff4d4d, #cc0000); color: white; padding: 8px 16px; font-size: 22px; font-weight: bold; border-radius: 50% / 30%; border: 2px solid #fff; box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4); }
+        .logo-area h1 { font-size: 20px; color: #fff; font-weight: 700; letter-spacing: 1px; }
+        .logo-area span { color: #ff4d4d; display: block; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; }
+        
+        nav ul { list-style: none; display: flex; gap: 18px; position: relative; align-items: center; flex-wrap: wrap; }
+        nav ul li { position: relative; }
+        nav ul li a { color: #e2e8f0; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 0; display: block; transition: 0.3s ease; }
+        nav ul li a:hover, nav ul li a.active { color: #ff4d4d; transform: translateY(-2px); }
+        
+        nav ul.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: rgba(26, 11, 46, 0.98); flex-direction: column; width: 190px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); z-index: 100; border: 1px solid rgba(255, 77, 77, 0.3); border-radius: 8px; overflow: hidden; backdrop-filter: blur(10px); }
+        nav ul li:hover ul.dropdown-menu { display: flex; }
+        nav ul.dropdown-menu li a { padding: 12px 18px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        .subheader { background: linear-gradient(90deg, #240d47, #3d1b73); color: white; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .subheader h2 { font-size: 18px; font-weight: 600; }
+        .breadcrumb { font-size: 13px; color: #cbd5e1; }
+        .breadcrumb span { color: #ff4d4d; font-weight: bold; }
+
+        .main-container { padding: 40px 50px; max-width: 1350px; margin: 0 auto; flex: 1; width: 100%; display: flex; flex-direction: column; gap: 30px; }
+        
+        .membership-card { background: linear-gradient(145deg, #180b2e, #130724); padding: 40px; border-radius: 12px; border-top: 4px solid #ff4d4d; box-shadow: 0 15px 35px rgba(0,0,0,0.5); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 25px; }
+        .membership-card h2 { color: #fff; font-size: 26px; border-bottom: 2px solid #ff4d4d; padding-bottom: 10px; width: 100%; }
+        .membership-card p { line-height: 1.8; color: #94a3b8; font-size: 15px; max-width: 900px; }
+        
+        .highlight-box { background: rgba(255, 77, 77, 0.1); border: 1px solid rgba(255, 77, 77, 0.3); padding: 15px 25px; border-radius: 8px; color: #fff; font-size: 16px; font-weight: bold; }
+        .highlight-box span { color: #ff4d4d; }
+
+        /* Authentic Printed Certificate Frame */
+        .authentic-cert-frame { background: #fffcf5; color: #111; width: 100%; max-width: 700px; padding: 25px; border-radius: 4px; border: 10px ridge #222; outline: 2px solid #b38728; box-shadow: 0 15px 35px rgba(0,0,0,0.7); position: relative; overflow: hidden; font-family: 'Times New Roman', Times, serif; text-align: left; margin-top: 20px; }
+        .cert-inner-border { border: 2px solid #111; padding: 15px; position: relative; z-index: 2; }
+        .cert-header-area { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 15px; border-bottom: 2px solid #111; padding-bottom: 10px; }
+        .kgca-logo-seal { width: 55px; height: 55px; border-radius: 50%; border: 2px double #111; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 9px; font-weight: bold; text-align: center; line-height: 1; background: #fdfdfd; font-family: Arial, sans-serif; }
+        .kgca-logo-seal span { color: #cc0000; font-size: 11px; }
+        .cert-main-head { font-size: 19px; font-weight: 900; color: #000; text-transform: uppercase; text-align: center; flex: 1; font-family: 'Impact', 'Arial Black', sans-serif; }
+        .cert-meta-bar { display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #222; margin-bottom: 15px; font-family: Arial, sans-serif; }
+        .cert-meta-bar u { font-family: 'Times New Roman', serif; }
+        .cert-title-heading { font-size: 18px; font-weight: 900; color: #000; text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 10px; text-decoration: underline; text-underline-offset: 4px; }
+        .cert-body-p { font-size: 14px; text-align: center; color: #222; margin-bottom: 8px; font-style: italic; }
+        .cert-company-highlight { font-size: 18px; font-weight: 900; color: #000; text-align: center; text-transform: uppercase; letter-spacing: 1px; margin: 10px 0; font-family: Arial, sans-serif; }
+        .cert-address-highlight { font-size: 13px; text-align: center; color: #333; margin-bottom: 12px; font-weight: bold; font-family: Arial, sans-serif; }
+        .official-blue-stamp { position: absolute; bottom: 25px; right: 25px; width: 105px; height: 105px; border: 3px dashed #1a237e; border-radius: 50%; color: #1a237e; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 8px; font-weight: bold; transform: rotate(-15deg); opacity: 0.85; pointer-events: none; font-family: Arial, sans-serif; line-height: 1.1; background: rgba(26, 35, 126, 0.03); }
+        .official-blue-stamp div { border-top: 1px solid #1a237e; border-bottom: 1px solid #1a237e; padding: 2px 0; margin: 2px 0; width: 80%; }
+
+        footer { background: #080211; color: white; margin-top: auto; border-top: 4px solid #ff4d4d; }
+        .footer-top { background: linear-gradient(135deg, #cc0000, #ff4d4d); display: flex; justify-content: space-around; padding: 30px 40px; color: white; flex-wrap: wrap; gap: 20px; }
+        .footer-top-col { flex: 1; min-width: 260px; }
+        .footer-top-col h3 { font-size: 18px; margin-bottom: 8px; text-transform: uppercase; }
+        .footer-top-col p { font-size: 14px; line-height: 1.6; font-weight: 500; }
+
+        .footer-middle { background: #110622; padding: 50px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 35px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col h4 { color: #fff; font-size: 17px; margin-bottom: 20px; border-bottom: 2px solid #ff4d4d; padding-bottom: 6px; display: inline-block; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 14px; transition: 0.3s; display: inline-block; }
+        .footer-col ul li a:hover { color: #ff4d4d; transform: translateX(5px); }
+
+        .social-links { display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap; }
+        .social-btn { padding: 8px 14px; font-size: 13px; font-weight: bold; color: white; text-decoration: none; border-radius: 4px; transition: 0.3s; display: inline-block; }
+        .fb-btn { background: #1877f2; }
+        .li-btn { background: #0a66c2; }
+        .wa-btn { background: #25d366; color: #000; }
+        .social-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+
+        .footer-quote-box input { width: 100%; padding: 11px; margin-bottom: 12px; border: none; border-radius: 6px; font-size: 13px; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255, 77, 77, 0.2); }
+        .footer-quote-box button { background: #ff4d4d; color: white; border: none; padding: 11px 20px; font-weight: bold; cursor: pointer; border-radius: 6px; }
+        
+        .footer-bottom { background: #05010a; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; font-size: 13px; color: #64748b; flex-wrap: wrap; gap: 10px; }
+        .footer-bottom span { color: #ff4d4d; }
+    </style>
+</head>
+<body>
+
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">CZ</div>
+            <div>
+                <h1>CHANZAIB</h1>
+                <span>GOODS TRANSPORT COMPANY (REGD)</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="our-story.html">OUR STORY</a></li>
+                <li>
+                    <a href="#">SERVICES ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="truck.html">Truck</a></li>
+                        <li><a href="trailer.html">Trailer</a></li>
+                        <li><a href="mazda.html">Mazda</a></li>
+                    </ul>
+                </li>
+                <li><a href="house-shifting.html">HOUSE SHIFTING</a></li>
+                <li><a href="clients.html">OUR CLIENTS</a></li>
+                <li><a href="membership.html" class="active" style="color: #ff4d4d;">MEMBERSHIP</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="admin.html">ADMIN PANEL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="subheader">
+        <h2>Official Membership</h2>
+        <div class="breadcrumb">HOME / <span>Membership</span></div>
+    </div>
+
+    <div class="main-container">
+        <div class="membership-card">
+            <h2>Official Association Membership</h2>
+            
+            <div class="highlight-box">
+                Proud Member of <span>Karachi Goods Carriers Association (Regd.)</span> Since 2000
+            </div>
+
+            <p>
+                <strong>Chanzaib Goods Transport Company (Regd)</strong> has a long-standing, trusted presence in Pakistan's logistics and transport sector. Since the year 2000, we have been an officially registered and active member of the <strong>Karachi Goods Carriers Association</strong>. This official certification stands as a solid guarantee of trust, legal compliance, and excellence in heavy cargo transportation across Pakistan.
+            </p>
+
+            <!-- Authentic Printed Certificate Display -->
+            <div class="authentic-cert-frame">
+                <div class="cert-inner-border">
+                    <div class="cert-header-area">
+                        <div class="kgca-logo-seal">
+                            <span>KGCA</span>
+                            REGD.
+                        </div>
+                        <div class="cert-main-head">KARACHI GOODS CARRIERS ASSOCIATION</div>
+                    </div>
+
+                    <div class="cert-meta-bar">
+                        <span>Membership No. <u>99</u></span>
+                        <span>Outward Reg. No. <u>12333</u></span>
+                        <span>S. No. <u>053</u></span>
+                    </div>
+
+                    <div class="cert-title-heading">MEMBERSHIP CERTIFICATE</div>
+
+                    <div class="cert-body-p">This is to Certify that Messrs</div>
+                    <div class="cert-company-highlight">CHAN ZAIB GOODS TRANSPORT CO.</div>
+                    <div class="cert-address-highlight">
+                        315-A, Street # 1, Gate # 4, New Truckstand,<br>Hawksbay Road, Karachi.
+                    </div>
+
+                    <div class="cert-body-p" style="font-weight: bold; font-style: normal; color: #000;">is an active member of</div>
+                    <div style="font-size: 14px; font-weight: 900; text-align: center; color: #000; text-transform: uppercase; margin-top: 5px;">
+                        KARACHI GOODS CARRIERS ASSOCIATION (Regd.)
+                    </div>
+
+                    <div class="official-blue-stamp">
+                        <span>COMMISSIONER KARACHI</span>
+                        <div>ABDUL...</div>
+                        <span>KGCA REGISTRATION</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-top-col">
+                <h3>Head Office (Karachi)</h3>
+                <p>Karachi SITE Industry Area, Karachi.</p>
+                <p style="margin-top: 5px; font-size: 13px;">Phone: 0323-2053481</p>
+            </div>
+            <div class="footer-top-col">
+                <h3>Branch Office (Hattar)</h3>
+                <p>Main Plaza, Near Shah Hospital, Industrial Estate Hattar, Haripur.</p>
+                <p style="margin-top: 5px; font-size: 13px;">Phone: 0343-4405961</p>
+            </div>
+            <div class="footer-top-col">
+                <h3>Connect & Socialize</h3>
+                <p>Email: chanzeb_goods@yahoo.com</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Chanzeaib/" target="_blank" class="social-btn fb-btn">Facebook</a>
+                    <a href="https://pk.linkedin.com/in/chanzaib-goods-transport-company-96b04b160" target="_blank" class="social-btn li-btn">LinkedIn</a>
+                    <a href="https://wa.me/923232053481" target="_blank" class="social-btn wa-btn">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="footer-col">
+                <div class="logo-area" style="margin-bottom: 15px;">
+                    <div style="background:linear-gradient(135deg, #ff4d4d, #cc0000); color:white; padding:4px 12px; font-weight:bold; border-radius:50%/30%; display:inline-block;">CZ</div>
+                    <h2 style="font-size:15px; color:#fff; display:inline-block; margin-left:8px;">CHANZAIB GOODS TRANSPORT</h2>
+                </div>
+                <p style="color:#94a3b8; font-size:13px; line-height:1.6;">Moving Your World with Care and Precision.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="our-story.html">Our Story</a></li>
+                    <li><a href="clients.html">Our Clients</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="truck.html">Truck</a></li>
+                    <li><a href="trailer.html">Trailer</a></li>
+                    <li><a href="mazda.html">Mazda</a></li>
+                    <li><a href="house-shifting.html">House Shifting</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-quote-box">
+                <h4>Quick Quotation</h4>
+                <form action="mailto:chanzeb_goods@yahoo.com" method="post" enctype="text/plain">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <input type="text" name="Phone" placeholder="Your Phone" required>
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Chanzaib Goods Transport Company (Regd). All rights reserved.</p>
+            <p>Karachi: 0323-2053481 | Hattar: 0343-4405961</p>
+        </div>
+    </footer>
+
+</body>
+</html>
