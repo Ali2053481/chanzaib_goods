@@ -27,12 +27,16 @@
 
         .main-container { padding: 40px 50px; max-width: 1200px; margin: 0 auto; flex: 1; width: 100%; display: flex; flex-direction: column; gap: 30px; }
         
-        #loginCard { background: linear-gradient(145deg, #180b2e, #130724); padding: 40px; border-radius: 12px; border-top: 4px solid #ff4d4d; max-width: 420px; margin: 50px auto; box-shadow: 0 15px 35px rgba(0,0,0,0.6); text-align: center; width: 100%; }
-        #loginCard h2 { color: #fff; margin-bottom: 20px; font-size: 22px; border-bottom: 2px solid #ff4d4d; padding-bottom: 8px; }
-        .login-input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,77,77,0.3); color: white; font-size: 14px; }
-        .login-btn { width: 100%; padding: 12px; background: #ff4d4d; color: white; border: none; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 15px; transition: 0.3s; }
+        #loginCard { background: linear-gradient(145deg, #180b2e, #130724); padding: 40px; border-radius: 12px; border-top: 4px solid #ff4d4d; max-width: 420px; margin: 50px auto; box-shadow: 0 15px 35px rgba(0,0,0,0.6); text-align: left; width: 100%; }
+        #loginCard h2 { color: #fff; margin-bottom: 20px; font-size: 22px; border-bottom: 2px solid #ff4d4d; padding-bottom: 8px; text-align: center; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px; color: #cbd5e1; }
+        .login-input { width: 100%; padding: 12px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,77,77,0.3); color: white; font-size: 14px; }
+        
+        .login-btn { width: 100%; padding: 12px; background: #ff4d4d; color: white; border: none; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 15px; transition: 0.3s; margin-top: 10px; }
         .login-btn:hover { background: #cc0000; }
-        .forgot-link { display: block; margin-top: 12px; font-size: 12px; color: #94a3b8; text-decoration: none; cursor: pointer; }
+        .forgot-link { display: block; margin-top: 15px; font-size: 12px; color: #94a3b8; text-decoration: none; cursor: pointer; text-align: center; }
         .forgot-link:hover { color: #ff4d4d; }
 
         #adminDashboard { display: none; flex-direction: column; gap: 30px; }
@@ -107,9 +111,14 @@
         <div id="loginCard">
             <h2>Admin Login</h2>
             <form onsubmit="event.preventDefault(); checkLogin();" autocomplete="off">
-                <input type="text" id="adminUser" class="login-input" placeholder="Admin Username" required autocomplete="off">
-                <!-- type="password" یقینی بناتا ہے کہ حروف چھپ جائیں -->
-                <input type="password" id="adminPass" class="login-input" placeholder="Password (ZULali123)" required autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly');">
+                <div class="input-group">
+                    <label>Admin Username:</label>
+                    <input type="text" id="adminUser" class="login-input" placeholder="Enter username" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Password (ZULali123):</label>
+                    <input type="password" id="adminPass" class="login-input" placeholder="Enter password" required autocomplete="new-password">
+                </div>
                 <button type="submit" class="login-btn">Login</button>
             </form>
             <a class="forgot-link" onclick="forgotPassword()">Forgot Password?</a>
@@ -152,7 +161,6 @@
 
     <script>
         window.onload = function() {
-            // Forcefully clear fields on load to stop browser autofill text display
             let userInput = document.getElementById('adminUser');
             let passInput = document.getElementById('adminPass');
             if(userInput) userInput.value = '';
@@ -211,9 +219,10 @@
         }
 
         function saveSettings() {
-            let title = document.getElementById('editSiteTitle').value;
+            let title = document.getElementById('editSiteTitle.value'); // fixed syntax in mind
+            let titleInput = document.getElementById('editSiteTitle').value;
             let phone = document.getElementById('editPhone').value;
-            localStorage.setItem('siteMainTitle', title);
+            localStorage.setItem('siteMainTitle', titleInput);
             localStorage.setItem('siteContactPhone', phone);
             alert("Website settings saved successfully!");
         }
