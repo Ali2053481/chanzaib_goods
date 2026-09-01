@@ -50,7 +50,6 @@
         footer { background: #080211; color: white; margin-top: auto; border-top: 4px solid #ff4d4d; padding: 20px 50px; text-align: center; font-size: 13px; color: #64748b; }
         footer span { color: #ff4d4d; }
 
-        /* Safe Mobile Responsive Fixes */
         @media (max-width: 992px) {
             header { padding: 15px 20px; flex-direction: column; gap: 15px; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 10px 15px; }
@@ -107,10 +106,10 @@
         <!-- Login Card -->
         <div id="loginCard">
             <h2>Admin Login</h2>
-            <form onsubmit="event.preventDefault(); checkLogin();">
-                <input type="text" id="adminUser" class="login-input" placeholder="Admin Username" required>
-                <!-- यहाँ type="text" को बदलकर type="password" कर दिया गया है ताकि पासवर्ड छिपा रहे -->
-                <input type="password" id="adminPass" class="login-input" placeholder="Password (ZULali123)" required>
+            <form onsubmit="event.preventDefault(); checkLogin();" autocomplete="off">
+                <input type="text" id="adminUser" class="login-input" placeholder="Admin Username" required autocomplete="off">
+                <!-- type="password" یقینی بناتا ہے کہ حروف چھپ جائیں -->
+                <input type="password" id="adminPass" class="login-input" placeholder="Password (ZULali123)" required autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly');">
                 <button type="submit" class="login-btn">Login</button>
             </form>
             <a class="forgot-link" onclick="forgotPassword()">Forgot Password?</a>
@@ -153,6 +152,12 @@
 
     <script>
         window.onload = function() {
+            // Forcefully clear fields on load to stop browser autofill text display
+            let userInput = document.getElementById('adminUser');
+            let passInput = document.getElementById('adminPass');
+            if(userInput) userInput.value = '';
+            if(passInput) passInput.value = '';
+
             if(sessionStorage.getItem('chanzaibAdminLoggedIn') === 'true') {
                 document.getElementById('loginCard').style.display = 'none';
                 document.getElementById('adminDashboard').style.display = 'flex';
