@@ -116,7 +116,7 @@
                     <input type="text" id="adminUser" class="login-input" placeholder="Enter username" required autocomplete="off">
                 </div>
                 <div class="input-group">
-                    <label>Password (ZULali123):</label>
+                    <label>Password:</label>
                     <input type="password" id="adminPass" class="login-input" placeholder="Enter password" required autocomplete="new-password">
                 </div>
                 <button type="submit" class="login-btn">Login</button>
@@ -219,7 +219,6 @@
         }
 
         function saveSettings() {
-            let title = document.getElementById('editSiteTitle.value'); // fixed syntax in mind
             let titleInput = document.getElementById('editSiteTitle').value;
             let phone = document.getElementById('editPhone').value;
             localStorage.setItem('siteMainTitle', titleInput);
